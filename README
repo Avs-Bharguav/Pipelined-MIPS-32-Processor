@@ -1,1 +1,19 @@
-Desining the RISC-V based MIPS-32 pipelined processor.
+# 🧠 MIPS32 Processor Design using Verilog
+
+A custom implementation of a 32-bit MIPS processor using Verilog, simulating the instruction pipeline, ALU, memory interface, and control logic.
+
+## 🚀 Features
+
+- Supports I-type, R-type, and J-type instructions
+- 5-stage pipeline: Fetch, Decode, Execute, Memory, Writeback
+- Hazard detection and forwarding
+- Branch and jump instructions support
+- Testbench with sample programs
+
+## 📦 Tools Used
+
+- **Verilog HDL**
+- **Icarus Verilog** (for simulation)
+- **GTKWave** (for waveform viewing)
+- **VS Code + Verilog extension**
+
