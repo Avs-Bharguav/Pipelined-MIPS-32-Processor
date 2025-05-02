@@ -2,18 +2,28 @@ module FETCH (
     input  i_clock,            // ← system clock
     input  i_reset,            // ← active-high reset
     input  i_PCSrc,            // ← select between PC+4 vs. branch target
-    input  [31:0] i_PCTarget,  // ← branch/jump target address
+    input  i_Jump,             // jump control
+    input  [31:0] i_PCJTarget, // jump target address
+    input  [31:0] i_PCBTarget,  // ← branch/jump target address
     output [31:0] o_PCNext_if_id,    // ← PC+4 passed to IF/ID
     output [31:0] o_Instruction_if_id // ← fetched instruction to IF/ID
 );
 
     // Calculate next PC: either sequential or branch target
-    wire [31:0] w_PCplus4, w_PCNest;
-    MUX PC_mux (
-        .o_out(w_PCNest),   // ← selected PC
+    wire [31:0] w_PCplus4, w_PCNest0;
+    MUX PC_Bmux (
+        .o_out(w_PCNest0),   // ← selected PC
         .w_select(i_PCSrc), // ← 0 = PC+4, 1 = branch
         .i_A(w_PCplus4),    // ← PC+4 input
-        .i_B(i_PCTarget)    // ← branch target input
+        .i_B(i_PCBTarget)    // ← branch target input
+    );
+    ////adding jump instruction
+     wire [31:0]  w_PCNest;
+    MUX PC_Jmux (
+        .o_out(w_PCNest),   // ← selected PC
+        .w_select(i_Jump), // ← 0 = PC+4, 1 = branch
+        .i_A(w_PCNest0),    // ← PC+4 input
+        .i_B(i_PCJTarget)    // ← branch target input
     );
 
     // Program counter register
