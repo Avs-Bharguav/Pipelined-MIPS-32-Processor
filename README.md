@@ -37,6 +37,19 @@ The MIPS unlike x86 has a fixed length of instructions here 32 bits in length be
 ![IMG_0968](https://github.com/user-attachments/assets/30585594-d8dc-4ac8-a497-b56e38ee132e)
 
 
+## Instruction Fetch 
+
+In this stage the processor's main work is to fetche the instruction from the instruction memory and get the next program counter value or that is next instruction address.
+Our PC will be byte addressable so we increment it by 4. There is a mux which selects between the branch operation address to the branch and Pc + 4. Additionally to add Jump instruction we also add another mux which selects between the jump address andprevious mux PC value. Following is the figure for fetch cycle.
+
+
+![IF](https://github.com/user-attachments/assets/455ee474-ce78-41c3-bf69-32536cda3030)
+
+Please go through the verilog code for better understanding. Following are the simulation results.
+
+
+
+
 
 
 
