@@ -48,8 +48,21 @@ Our PC will be byte addressable so we increment it by 4. There is a mux which se
 Please go through the verilog code for better understanding. Following are the simulation results.
 
 
+### Folling Image shows the normal updation of PC = PC + 4 when i_Jump and i_PCSrc are low.
+![IF_gtk1](https://github.com/user-attachments/assets/af000572-a845-4df0-b43a-9d08de648c84)
+
+### Following Image shows how the PC is updated for branch and jump instructions.
+
+![IF_gtk2](https://github.com/user-attachments/assets/33134dee-ba4d-4b75-b010-b7f319ad0c21)
 
 
 
+
+
+
+
+### The Complete Pitchure.
+
+![IMG_0961](https://github.com/user-attachments/assets/30065c63-0b46-4104-81b2-6c08be3f41f1)
 
 
